@@ -42,7 +42,7 @@ Após a criação dos recursos, vá no console e verique o ip público da sua in
 
 Destruição dos recursos criados
 
-Comando para criar recursos na AWS
+Comando para destruir os recursos na AWS
 
 ```bash
 terraform destroy
