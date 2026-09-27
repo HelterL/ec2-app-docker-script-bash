@@ -1,12 +1,15 @@
-resource "aws_instance" "web" {
-  ami           = "ami-0fc5d935ebf8bc3bc"
-  instance_type = "t2.micro"
-  key_name = "aws-server"
-  subnet_id = var.subnet_id
-  vpc_security_group_ids = [ var.sec_group_id ]
-  associate_public_ip_address = true
-  user_data = file("script.sh")
-  tags = {
-    Name = "HelloWorld"
-  }
+module "ec2" {
+  source                      = "terraform-aws-modules/ec2-instance/aws"
+  version                     = "~> 5.0"
+  name                        = var.name
+  ami                         = var.ami
+  instance_type               = var.instance_type
+  key_name                    = var.key_name
+  subnet_id                   = var.subnet_id
+  vpc_security_group_ids      = [var.security_group_id]
+  associate_public_ip_address = var.associate_public_ip_address
+
+  user_data = var.user_data
+
+  tags = var.tags
 }

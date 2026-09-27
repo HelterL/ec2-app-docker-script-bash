@@ -1,0 +1,9 @@
+# Copie este arquivo para terraform.tfvars e ajuste os valores conforme necessario.
+
+aws_region    = "us-east-1"
+project_name  = "project-devops"
+instance_type = "t2.micro"
+key_name      = "aws-server"
+
+# CIDRs autorizados a acessar HTTP, HTTPS e SSH (evite 0.0.0.0/0 em producao).
+allowed_ingress_cidr_blocks = ["0.0.0.0/0"]
