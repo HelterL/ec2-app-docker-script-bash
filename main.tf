@@ -13,7 +13,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = "projetodevopstf"
+    bucket  = "nomeseubucket"
     key     = "deployweb.tfstate"
     region  = "us-east-1"
     encrypt = true
